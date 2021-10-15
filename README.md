@@ -1,4 +1,4 @@
-# Book Extra Chapters - U.2.4: Upgrade to Spring Boot 2.4.0, Cloud 2020, JDK 15
+# Book Extra Chapters - U.2.5: Upgrade to Spring Boot 2.5.5, JDK 17
 
 This repository contains the source code of the practical use case described in the book [Learn Microservices with Spring Boot (2nd Edition)](https://amzn.to/3nADn4q).
 
@@ -6,29 +6,28 @@ If you want to know more details about the book and its extra chapters, make sur
 
 The book follows a pragmatic approach to building a Microservice Architecture, using a reference implementation that evolves from a small monolith to a full microservice system. 
 
-## Upgrade - Spring Boot 2.4.0, Spring Cloud 2020.0, JDK 15
+## Upgrade - Spring Boot 2.5.5, JDK 17
 
-This extra chapter includes some relevant upgrades for the technology stack used in the book's microservice architecture. 
+This extra chapter brings the project dependencies to the latest Spring Boot and Java versions. 
 
-All these changes are described in detail in a [blog post](https://thepracticaldeveloper.com/book-update-2.4.0/) at The Practical Developer's website. Visit [https://thepracticaldeveloper.com/book-update-2.4.0/](https://thepracticaldeveloper.com/book-update-2.4.0/)
+All these changes are described in detail in a [blog post](https://thepracticaldeveloper.com/book-update-2.5.5/) at The Practical Developer's website. Visit [https://thepracticaldeveloper.com/book-update-2.5.5/](https://thepracticaldeveloper.com/book-update-2.5.5/)
 
-### Changes - migrating from Spring Boot 2.3.4 to 2.4.0
+### Changes - migrating from Spring Boot 2.4.0 to 2.5.5
 
 A summary of the updates included in this package:
 
-* The default username for the H2 database is no longer `sa`, so we need to pass this property explicitly or get rid of the old databases.
-* Bootstrap is disabled in the new Spring Cloud version, so we have to enable it again to make the config server setup work properly.
-* The old MDC key names for Sleuth (Brave) have been removed in favor of the new ones, so we have to change the Logs microservice to use these in the Logback configuration file.
+* [Multiplication]: Changed the logic of `ChallengeGeneratorService` to use the new JDK 17's `RandomGenerator` interface. This fixes a test but also uses good testing practices (Mock over Spy).
+* [Gamification]: Removed the trick inside `application-default.properties` since that's not needed anymore and broke the build after the update.
+
+The full description is [here](https://thepracticaldeveloper.com/book-update-2.5.5/).
 
 #### References
 
-* [The main post](https://thepracticaldeveloper.com/book-update-2.4.0/) where I explain all these changes.
+* [The blog post](https://thepracticaldeveloper.com/book-update-2.5.5/).
 
 Some additional references from the official documentation:
 
-* [Spring Cloud 2020.0 Release Notes](https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes)
-* [Spring Boot 2.4.0 Release Notes, Embedded Database Detection](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.4-Release-Notes#embedded-database-detection), and the related [pull request](https://github.com/spring-projects/spring-boot/pull/23693#issuecomment-712678254).
-* [Spring Cloud Sleuth - Removed legacy MDC entries](https://github.com/spring-cloud/spring-cloud-sleuth/issues/1221)
+* [Spring Boot 2.5.5 Release Notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes)
 
 ## Running the app
 
@@ -58,8 +57,8 @@ Are you interested in building a microservice architecture from scratch? You'll 
 
 You can **buy the book online** from these stores:
 
-* [Apress](https://www.kqzyfj.com/click-8535631-14029332?url=https%3A%2F%2Fwww.apress.com%2Fgp%2Fbook%2F9781484261309)
 * [Amazon](https://amzn.to/3nADn4q)
+* [Apress](https://www.kqzyfj.com/click-8535631-14029332?url=https%3A%2F%2Fwww.apress.com%2Fgp%2Fbook%2F9781484261309)
 * and other online stores, check the IBAN (9781484261309) on [google](https://www.google.com/search?q=9781484261309)
 
 ### Source code by chapter (all repositories are available on Github)
@@ -77,4 +76,5 @@ You can **buy the book online** from these stores:
 Extra chapters:
 
 * [E.1. End-to-End Microservice tests with Cucumber](https://github.com/Book-Microservices-v2/cucumber-tests)
-* [U.2.4.0. Upgrade: Spring Boot 2.4.0 and more]()
+* [U.2.4.0. Upgrade: Spring Boot 2.4.0 and more](https://thepracticaldeveloper.com/book-update-2.4.0/)
+* [U.2.5.5. Upgrade: Spring Boot 2.5.5 and more](https://thepracticaldeveloper.com/book-update-2.5.5/)
